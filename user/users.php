@@ -28,7 +28,7 @@ if (isset($_GET["q"])) {
             break;
     }
 
-    $perPage = 5;
+    $perPage = 10;
     $startItem = ($p - 1) * $perPage;
     $totalPage = ceil($userCount / $perPage);
     $sql = "SELECT * FROM users WHERE valid=1 $orderClause LIMIT $startItem, $perPage";
