@@ -55,18 +55,9 @@ if (isset($_GET["q"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="../sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <?php include("../css.php") ?>
+    
     <style>
         .primary {
             background-color: rgba(245, 160, 23, 0.919);
@@ -225,7 +216,7 @@ if (isset($_GET["q"])) {
                     <!-- Page Heading -->
                     <h1 class="h3 mb-0 text-gray-800">會員管理</h1>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class="py-2 row g-3 align-items-center">
                                 <div class="col-md-6">
                                     <div class="hstack gap-2 align-item-center">
@@ -251,30 +242,38 @@ if (isset($_GET["q"])) {
                                     </form>
                                 </div>
                             </div>
-                            <div class="py-2 text-end">
-                                <div class="btn-group">
-                                    <a href="users.php?p=<?= $p ?>&order=3" class="btn btn-primary <?php if ($order == 3) echo "active" ?>"><i class="fa-solid fa-arrow-down-a-z fa-fw"></i></a>
-                                    <a href="users.php?p=<?= $p ?>&order=4" class="btn btn-primary <?php if ($order == 4) echo "active" ?>"><i class="fa-solid fa-arrow-down-z-a fa-fw"></i></a>
-                                </div>
-                            </div>
                             <?php if ($userCount > 0): ?>
-
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="row g-0 align-middle">
-                                                <div class="d-flex align-items-center col-9">
-                                                    id
-                                                </div>
-                                                <div class="col-3 list-btn">
-                                                    <a href="users.php?p=<?= $p ?>&order=1" class="d-flex btn btn-sm p-0 <?php if ($order == 1) echo "active" ?>"><i class="fa-solid fa-caret-up "></i></a>
-                                                    <a href="users.php?p=<?= $p ?>&order=2" class="d-flex btn btn-sm p-0 m-0 <?php if ($order == 2) echo "active" ?>"><i class="fa-solid fa-caret-down "></i></a>
+                                            <th class="align-middle">
+                                                <div class="row g-0">
+                                                    <div class="d-flex align-items-center col-9">
+                                                        id
+                                                    </div>
+                                                    <div class="col-3 list-btn">
+                                                        <a href="users.php?p=<?= $p ?>&order=1" class="d-flex btn p-0 <?php if ($order == 1) echo "active" ?>"><i class="fa-solid fa-caret-up "></i></a>
+                                                        <a href="users.php?p=<?= $p ?>&order=2" class="d-flex btn p-0 m-0 <?php if ($order == 2) echo "active" ?>"><i class="fa-solid fa-caret-down "></i></a>
+                                                    </div>
                                                 </div>
                                             </th>
-                                            <th class="align-middle">account</th>
-                                            <th class="align-middle">name</th>
+                                            <th class="align-middle">
+                                                <div class="row g-0">
+                                                    <div class="d-flex align-items-center col-9">
+                                                        name
+                                                    </div>
+                                                    <div class="col-3 list-btn">
+                                                        <a href="users.php?p=<?= $p ?>&order=3" class="d-flex btn p-0 <?php if ($order == 3) echo "active" ?>"><i class="fa-solid fa-caret-up "></i></a>
+                                                        <a href="users.php?p=<?= $p ?>&order=4" class="d-flex btn p-0 m-0 <?php if ($order == 4) echo "active" ?>"><i class="fa-solid fa-caret-down "></i></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th class="align-middle">
+                                                account
+                                            </th>
                                             <th class="align-middle">phone</th>
                                             <th class="align-middle">email</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
